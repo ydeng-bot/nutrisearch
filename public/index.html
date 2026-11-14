@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NutriSearch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>NutriSearch 🥗</h1>
+  <p class="sub">Find out what is in your food (values per 100 g)</p>
+
+  <form id="searchForm">
+    <input id="query" placeholder="e.g. banana, rice, beans" required>
+    <button>Search</button>
+  </form>
+
+  <div id="controls" hidden>
+    <select id="category"></select>
+    <select id="sort">
+      <option value="name">Sort: Name A-Z</option>
+      <option value="calLow">Calories: low to high</option>
+      <option value="calHigh">Calories: high to low</option>
+      <option value="protein">Protein: high to low</option>
+    </select>
+    <label><input type="checkbox" id="highProtein"> High protein (10g+)</label>
+  </div>
+
+  <p id="message"></p>
+
+  <table id="table" hidden>
+    <thead>
+      <tr><th>Food</th><th>Calories</th><th>Protein (g)</th><th>Fat (g)</th><th>Carbs (g)</th></tr>
+    </thead>
+    <tbody id="results"></tbody>
+  </table>
+
+  <div id="details" hidden></div>
+
+  <footer>Data from <a href="https://fdc.nal.usda.gov/">USDA FoodData Central</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
+
+                
