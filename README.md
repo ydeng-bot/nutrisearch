@@ -58,7 +58,7 @@ cd nutrisearch
 npm install
 cp .env.example .env
 ```
-Open `.env` and replace `put_your_key_here` with your own USDA key. No quotes and no spaces around `=`. Then:
+Open `.env` and replace `put_your_key_here` with your USDA key. No quotes and no spaces around `=`. Then:
 ```bash
 node server.js
 ```
