@@ -170,11 +170,11 @@ for i in 1 2 3 4 5 6; do curl -sI http://18.132.195.114 | grep -i x-served-by; d
 ```
 Result: web01 and web02 take turns.
 
-![Load balancer test](lb-test.png.png)
+![Load balancer test](lb-test.png)
 
 **Failover test:** I stopped the app on Web01 with `pm2 stop nutrisearch`. After a few seconds all six requests were answered by web02 and the site kept working. I then ran `pm2 start nutrisearch`, and web01 and web02 alternated again.
 
-![Failover test](failover-test.png.png)
+![Failover test](failover-test.png)
 
 ## Challenges and solutions
 - **Keeping the API key secret:** calling USDA from the browser would expose the key, so my Express server makes the API calls and the key stays in `.env`. `.gitignore` keeps `.env` out of the repo. I checked with `git ls-files` before pushing.
