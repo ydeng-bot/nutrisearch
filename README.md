@@ -188,6 +188,7 @@ Result: web01 and web02 take turns.
 - **Duplicate HAProxy frontend:** Lb01 already had an `http_front` from an earlier project, and my new block clashed with it. I removed my duplicate and edited the existing frontend and backend instead. I also commented out the HTTPS redirect, which stopped the app from loading over HTTP.
 - **Knowing which server answered:** I added an `X-Served-By` header so the load balancer test could show web01 and web02 alternating.
 - **API rate limit:** the 10-minute cache (capped at 200 entries) and the per-visitor limit of 60 requests per minute protect the 1,000 requests per hour quota.
+- - **Missing nutrient values:** some USDA entries, such as the dry beans marked "(0% moisture)", don't report calories or total carbohydrate. They list starch and fibre separately, so the table shows 0 for those two columns. This means "not reported", not a real zero. The Details panel shows exactly what USDA provides for each food.
 
 ## Credits
 - U.S. Department of Agriculture, Agricultural Research Service. FoodData Central, 2019. https://fdc.nal.usda.gov (public domain, CC0 1.0)
